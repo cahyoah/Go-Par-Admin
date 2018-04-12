@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coordinator"
+    android:background="@drawable/bg_login">
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/owl_white"/>
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_below="@id/img_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="70dp"
+                android:paddingLeft="10dp"
+                android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                android:drawablePadding="15dp"
+                android:hint="@string/text_username"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/purple_100"
+                android:background="@drawable/bg_input"/>
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_below="@id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:drawablePadding="15dp"
+                android:hint="@string/text_password"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/purple_100"
+                android:background="@drawable/bg_input"/>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_below="@id/et_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_login"
+                android:text="@string/text_login"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="50dp" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>

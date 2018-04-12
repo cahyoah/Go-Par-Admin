@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Go-Par Admin</string>
+    <string name="text_accept_edit">Accept Edit</string>
+    <string name="text_cancel">Batal</string>
+    <string name="text_cancel_edit">Batal Edit</string>
+    <string name="text_cannot_empty">Harus diisi</string>
+    <string name="text_delete_tips">Hapus Tips</string>
+    <string name="text_delete_tips_confirmation">Tips akan dihapus. Apakah anda yakin?</string>
+    <string name="text_delete_reminder_confirmation">Reminder akan dihapus. Apakah anda yakin?</string>
+    <string name="text_exit_detail_confirmation">Seluruh perubahan akan dibatalkan. Apakah anda yakin?</string>
+    <string name="text_exit">Keluar</string>
+    <string name="text_edit_tips">Edit Tips</string>
+    <string name="text_edit_password_confirmation">Penggantian password berhasil</string>
+    <string name="text_exit_confirmation">Apakah anda yakin ingin keluar?</string>
+    <string name="text_exit_add_confirmation">Seluruh tulisan akan hilang. Apakah anda yakin?</string>
+    <string name="text_failed_get_data">Terjadi kesalahan. Apakah anda ingin mengulang?</string>
+    <string name="text_loading">Silahkan tunggu....</string>
+    <string name="text_login">Masuk</string>
+    <string name="text_name">Nama</string>
+    <string name="text_password">Password</string>
+    <string name="text_password_new">Password Baru</string>
+    <string name="text_password_new_confirm">Konfirmasi Password Baru</string>
+    <string name="text_posting">Posting</string>
+    <string name="text_save">Simpan</string>
+    <string name="text_settings">Pengaturan</string>
+    <string name="text_read_file">This app needs access to your file storage so that it can read photos.</string>
+    <string name="text_reminder_title">Judul Reminder</string>
+    <string name="text_reminder_description">Deskripsi Reminder</string>
+    <string name="text_reminder_yes">Reminder Yes</string>
+    <string name="text_reminder_no">Reminder No</string>
+    <string name="text_tips_title">Judul Tips</string>
+    <string name="text_tips_description">Deskripsi Tips</string>
+
+    <string name="text_username">Username</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

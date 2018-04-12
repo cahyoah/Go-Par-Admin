@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_delete_tips"
+        android:title="@string/text_delete_tips"
+        android:icon="@drawable/ic_delete_white_24dp"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_edit_tips"
+        android:title="@string/text_edit_tips"
+        android:icon="@drawable/ic_edit_white_24dp"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_cancel_edit_tips"
+        android:title="@string/text_cancel_edit"
+        android:icon="@drawable/ic_clear_white_24dp"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_accept_edit_tips"
+        android:title="@string/text_accept_edit"
+        android:icon="@drawable/ic_check_white_24dp"
+        android:visible="false"
+        app:showAsAction="always"/>
+</menu>
