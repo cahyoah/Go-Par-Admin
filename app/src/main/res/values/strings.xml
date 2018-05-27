@@ -20,14 +20,15 @@
     <string name="text_password">Password</string>
     <string name="text_password_new">Password Baru</string>
     <string name="text_password_new_confirm">Konfirmasi Password Baru</string>
-    <string name="text_posting">Posting</string>
+    <string name="text_posting">Post</string>
     <string name="text_save">Simpan</string>
     <string name="text_settings">Pengaturan</string>
     <string name="text_read_file">This app needs access to your file storage so that it can read photos.</string>
     <string name="text_reminder_title">Judul Reminder</string>
     <string name="text_reminder_description">Deskripsi Reminder</string>
-    <string name="text_reminder_yes">Reminder Yes</string>
-    <string name="text_reminder_no">Reminder No</string>
+    <string name="text_reminder_yes">Reminder Ya</string>
+    <string name="text_reminder_no">Reminder Tidak</string>
+    <string name="text_reminder_age">Reminder Umur</string>
     <string name="text_tips_title">Judul Tips</string>
     <string name="text_tips_description">Deskripsi Tips</string>
 

@@ -19,7 +19,7 @@ import com.example.asus.go_paradmin.util.ShowAlert;
 
 public class DetailReminderActivity extends AppCompatActivity implements DetailReminderView {
 
-    private EditText etReminderTitle, etReminderDescription, etReminderYes, etReminderNo;
+    private EditText etReminderTitle, etReminderDescription, etReminderYes, etReminderNo, etReminderAge;
     private DetailReminderPresenter detailReminderPresenter;
     private int reminderId;
     private AlertDialog alert;
@@ -47,6 +47,7 @@ public class DetailReminderActivity extends AppCompatActivity implements DetailR
         etReminderDescription = findViewById(R.id.et_reminder_description);
         etReminderYes = findViewById(R.id.et_reminder_yes);
         etReminderNo = findViewById(R.id.et_reminder_no);
+        etReminderAge = findViewById(R.id.et_reminder_age);
         reminderId = getIntent().getExtras().getInt("reminderId");
         initPresenter();
 
@@ -131,6 +132,7 @@ public class DetailReminderActivity extends AppCompatActivity implements DetailR
         etReminderDescription.setText(reminder.getReminderDescription());
         etReminderYes.setText(reminder.getReminderYes());
         etReminderNo.setText(reminder.getReminderNo());
+        etReminderAge.setText(reminder.getReminderAge());
         reminder1 = reminder;
         invalidateOptionsMenu();
         if(reminder.getReminderSong() != null){

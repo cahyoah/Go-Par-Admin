@@ -19,8 +19,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +35,7 @@ import com.example.asus.go_paradmin.util.ShowAlert;
 
 import java.io.File;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.MediaType;
@@ -54,7 +58,9 @@ public class AddReminderActivity extends AppCompatActivity implements EasyPermis
     private AlertDialog alert;
     private AlertDialog.Builder builder;
     private EditText etReminderTitle, etReminderDescription, etReminderYes, etReminderNo;
+    private Spinner spnReminderAge;
     private TextView tvSongPath;
+    private String reminderAgeSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +75,7 @@ public class AddReminderActivity extends AppCompatActivity implements EasyPermis
         etReminderDescription = findViewById(R.id.et_reminder_description);
         etReminderYes = findViewById(R.id.et_reminder_yes);
         etReminderNo = findViewById(R.id.et_reminder_no);
+        spnReminderAge = findViewById(R.id.spn_reminder_age);
         tvSongPath = findViewById(R.id.tv_song_path);
         btnSelectSong = findViewById(R.id.btn_select_song);
         btnSelectSong.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +95,7 @@ public class AddReminderActivity extends AppCompatActivity implements EasyPermis
             }
         });
         initPresenter();
+        initSpinner();
     }
 
     @Override
@@ -95,6 +103,31 @@ public class AddReminderActivity extends AppCompatActivity implements EasyPermis
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_posting_reminder, menu);
         return true;
+    }
+
+    private void initSpinner(){
+        final List<String> list = new ArrayList<String>();
+        list.add("< 1 Tahun");
+        list.add("1 Tahun");
+        list.add("2 Tahun");
+        list.add("3 Tahun");
+        ArrayAdapter<String> adp1 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, list);
+        adp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnReminderAge.setAdapter(adp1);
+        spnReminderAge.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+                // TODO Auto-generated method stub
+                reminderAgeSelected = list.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
     }
 
     private void initPresenter(){
@@ -110,6 +143,7 @@ public class AddReminderActivity extends AppCompatActivity implements EasyPermis
                 String reminderDescription = etReminderDescription.getText().toString().trim();
                 String reminderYes = etReminderYes.getText().toString().trim();
                 String reminderNo = etReminderNo.getText().toString().trim();
+
                 if(reminderTitle.isEmpty()){
                     etReminderTitle.setError(getString(R.string.text_cannot_empty));
                     etReminderTitle.requestFocus();
@@ -117,17 +151,19 @@ public class AddReminderActivity extends AppCompatActivity implements EasyPermis
                     etReminderDescription.setError(getString(R.string.text_cannot_empty));
                     etReminderDescription.requestFocus();
                 }else if(reminderYes.isEmpty()){
-                    etReminderYes.setError(getString(R.string.text_reminder_yes));
+                    etReminderYes.setError(getString(R.string.text_cannot_empty));
                     etReminderYes.requestFocus();
                 }else if(reminderNo.isEmpty()){
-                    etReminderNo.setError(getString(R.string.text_reminder_no));
+                    etReminderNo.setError(getString(R.string.text_cannot_empty));
                     etReminderNo.requestFocus();
+                }else if(reminderAgeSelected.isEmpty()){
+                    ShowAlert.showToast(getApplicationContext(), "Anda belum memilih umur");
                 }else{
                     if(ShowAlert.dialog != null && ShowAlert.dialog.isShowing()){
                         ShowAlert.closeProgresDialog();
                     }
                     ShowAlert.showProgresDialog(AddReminderActivity.this);
-                    addReminderPresenter.postReminder(reminderTitle, reminderDescription, reminderYes, reminderNo, filename, fileToUpload);
+                    addReminderPresenter.postReminder(reminderTitle, reminderDescription, reminderYes, reminderNo, reminderAgeSelected, filename, fileToUpload);
                 }
                 return true;
 
@@ -136,7 +172,7 @@ public class AddReminderActivity extends AppCompatActivity implements EasyPermis
                 String reminderDescription1 = etReminderDescription.getText().toString().trim();
                 String reminderYes1 = etReminderYes.getText().toString().trim();
                 String reminderNo1 = etReminderNo.getText().toString().trim();
-                if(reminderTitle1.isEmpty() && reminderDescription1.isEmpty() && reminderNo1.isEmpty() && reminderYes1.isEmpty()){
+                if(reminderTitle1.isEmpty() && reminderDescription1.isEmpty() && reminderNo1.isEmpty() && reminderYes1.isEmpty() && reminderAgeSelected.isEmpty()){
                     super.onBackPressed();
                 }else{
                     alertDialogCheck();

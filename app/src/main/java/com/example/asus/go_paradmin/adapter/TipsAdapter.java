@@ -37,7 +37,7 @@ public class TipsAdapter extends RecyclerView.Adapter<TipsAdapter.RoomChatViewHo
 
     @Override
     public void onBindViewHolder(RoomChatViewHolder holder, final int position) {
-        holder.tvUserTimeUpload.setText("Dipost oleh "+tipsList.get(position).getUser().getName() + "   "+ tipsList.get(position).getCreatedAt());
+        holder.tvUserTimeUpload.setText("Dipost oleh "+tipsList.get(position).getUser().getName());
         holder.tvTipsTitle.setText(tipsList.get(position).getTipsTitle());
         holder.tvTipsDescription.setText(tipsList.get(position).getTipsDescription());
         holder.itemView.setOnClickListener(new View.OnClickListener() {

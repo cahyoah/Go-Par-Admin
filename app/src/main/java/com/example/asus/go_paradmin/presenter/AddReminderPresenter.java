@@ -18,7 +18,7 @@ public class AddReminderPresenter {
     public AddReminderPresenter(AddReminderView addReminderView){
         this.addReminderView = addReminderView;
     }
-    public void postReminder(String reminderTitle, String reminderDescription, String reminderYes, String reminderNo, RequestBody filename, MultipartBody.Part fileToUpload){
+    public void postReminder(String reminderTitle, String reminderDescription, String reminderYes, String reminderNo, String reminderAge, RequestBody filename, MultipartBody.Part fileToUpload){
         RetrofitClient.getInstance()
                 .getApi()
                 .postReminder(SaveUserData.getInstance().getUser().getId(),
@@ -26,6 +26,7 @@ public class AddReminderPresenter {
                         reminderDescription,
                         reminderYes,
                         reminderNo,
+                        reminderAge,
                         filename,
                         fileToUpload)
                 .enqueue(new Callback<JsonObject>() {

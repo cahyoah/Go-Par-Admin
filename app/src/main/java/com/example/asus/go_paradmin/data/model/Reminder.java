@@ -22,6 +22,9 @@ public class Reminder {
     @SerializedName("reminder_no")
     @Expose
     private String reminderNo;
+    @SerializedName("reminder_age")
+    @Expose
+    private String reminderAge;
     @SerializedName("reminder_song")
     @Expose
     private String reminderSong;
@@ -81,6 +84,14 @@ public class Reminder {
 
     public void setReminderNo(String reminderNo) {
         this.reminderNo = reminderNo;
+    }
+
+    public String getReminderAge() {
+        return reminderAge;
+    }
+
+    public void setReminderage(String reminderAge) {
+        this.reminderAge = reminderAge;
     }
 
     public String getReminderSong() {

@@ -78,6 +78,7 @@ public interface Api {
             @Part("reminder_description") String reminderDescription,
             @Part("reminder_yes") String reminderYes,
             @Part("reminder_no") String reminderNo,
+            @Part("reminder_age") String reminderAge,
             @Part("reminder_song") RequestBody name,
             @Part MultipartBody.Part file);
 
